@@ -1,0 +1,74 @@
+{
+  "name": "spase-ide-ai",
+  "displayName": "Spase IDE AI",
+  "version": "0.0.1",
+  "description": "Cursor-like AI assistant for VS Code (Spase-IDE prototype).",
+  "publisher": "spase",
+  "main": "./dist/extension.js",
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -p . -w",
+    "lint": "eslint .",
+    "package": "vsce package",
+    "prepackage": "npm run compile"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "vscode": "^1.116.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:spaseAi.openChat",
+    "onCommand:spaseAi.clearChat"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "spaseAi.openChat",
+        "title": "Spase AI: Open Chat"
+      },
+      {
+        "command": "spaseAi.clearChat",
+        "title": "Spase AI: Clear Chat History"
+      }
+    ],
+    "configuration": {
+      "title": "Spase AI",
+      "properties": {
+        "spaseAi.apiBaseUrl": {
+          "type": "string",
+          "default": "https://api.openai.com/v1",
+          "description": "Base URL for an OpenAI-compatible API."
+        },
+        "spaseAi.model": {
+          "type": "string",
+          "default": "gpt-4.1-mini",
+          "description": "Model name to use."
+        },
+        "spaseAi.includeActiveFileByDefault": {
+          "type": "boolean",
+          "default": true,
+          "description": "When enabled, includes active editor content in requests by default."
+        }
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://example.invalid/spase-ide"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/vscode": "^1.116.0",
+    "@typescript-eslint/eslint-plugin": "^8.58.2",
+    "@typescript-eslint/parser": "^8.58.2",
+    "@vscode/vsce": "^3.9.0",
+    "eslint": "^10.2.0",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,391 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #0f0f0f;
+  background-color: #f6f6f6;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+.ideRoot {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+.sidebar {
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+.sidebarHeader {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.sidebarSectionTitle {
+  font-size: 12px;
+  opacity: 0.75;
+  text-transform: uppercase;
+}
+
+.sidebarHint {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.sidebarStatus {
+  margin-top: auto;
+  font-size: 12px;
+  opacity: 0.85;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.btn {
+  font: inherit;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.main {
+  display: grid;
+  grid-template-rows: 40px 1fr;
+  min-width: 0;
+}
+
+.topbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+.tab {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.topbarSpacer {
+  flex: 1;
+}
+
+.content {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+}
+
+.editorPane {
+  min-width: 0;
+}
+
+.chatPane {
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  display: grid;
+  grid-template-rows: 40px 1fr;
+  min-width: 0;
+}
+
+.chatHeader {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  font-weight: 600;
+}
+
+.chat {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 36px 1fr auto;
+}
+
+.chatToolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.chatStatus {
+  margin-left: auto;
+  font-size: 12px;
+  opacity: 0.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chatTranscript {
+  padding: 8px;
+  overflow: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatMsg {
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.chatRole {
+  font-size: 11px;
+  opacity: 0.75;
+  margin-bottom: 2px;
+}
+
+.chatContent {
+  font-size: 13px;
+}
+
+.chatComposer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.chatInput {
+  font: inherit;
+  font-size: 13px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.6);
+  resize: none;
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.modal {
+  width: min(720px, 100%);
+  max-height: min(720px, 100%);
+  background: rgba(255, 255, 255, 0.92);
+  color: #0f0f0f;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 52px 1fr;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.modalTitle {
+  font-weight: 700;
+}
+
+.modalBody {
+  padding: 12px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardTitle {
+  font-weight: 600;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldLabel {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.fieldHint {
+  font-size: 12px;
+  opacity: 0.75;
+  line-height: 1.35;
+}
+
+.input {
+  font: inherit;
+  font-size: 13px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.tree {
+  font-size: 13px;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.treeRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.treeRow:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.treeIcon {
+  width: 14px;
+  opacity: 0.7;
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.treeName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.treeMuted {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.treeError {
+  opacity: 0.9;
+  color: #b00020;
+  cursor: default;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #f6f6f6;
+    background-color: #2f2f2f;
+  }
+
+  .sidebar {
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .topbar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .btn {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(0, 0, 0, 0.25);
+    color: inherit;
+  }
+
+  .btn:hover {
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .treeRow:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .treeError {
+    color: #ff6b6b;
+  }
+
+  .chatPane {
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .chatHeader {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .chatToolbar,
+  .chatComposer {
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .chatInput {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(0, 0, 0, 0.25);
+    color: inherit;
+  }
+
+  .modal {
+    background: rgba(20, 20, 20, 0.92);
+    color: #f6f6f6;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .modalHeader {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .card {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .input {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(0, 0, 0, 0.25);
+    color: inherit;
+  }
+}

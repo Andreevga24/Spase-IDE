@@ -1,0 +1,24 @@
+## IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+## Node / web
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+.turbo/
+.vite/
+
+## Tauri / Rust
+apps/desktop/src-tauri/target/
+apps/desktop/src-tauri/Cargo.lock
+
+## VS Code extension builds
+apps/vscode-extension/dist/
+apps/vscode-extension/*.vsix
+

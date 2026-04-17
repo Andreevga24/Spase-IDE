@@ -1,0 +1,12 @@
+**/.vscode/**
+**/.github/**
+**/*.ts
+**/*.map
+src/**
+node_modules/**
+.eslintrc.cjs
+tsconfig.json
+README.md
+CHANGELOG.md
+docs/**
+
